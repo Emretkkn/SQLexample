@@ -20,4 +20,4 @@ WHERE customer.first_name = 'Mary';
 ## 5.SORGU
 
 SELECT * FROM film
-WHERE film.length <= 50 AND (film.rental_rate != 2.99 OR film.rental_rate != 4.99)
+WHERE film.length <= 50 AND (film.rental_rate != 2.99 OR film.rental_rate != 4.99);

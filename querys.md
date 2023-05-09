@@ -61,3 +61,31 @@ WHERE film.title ILIKE '%T%T%T%T';
 
 SELECT film.title FROM film
 WHERE film.title ILIKE '%c' AND film.length > 90 AND film.rental_rate = 2.99;
+
+--------------------------------------------------------------------------------------------------------
+# ÖDEV 4
+## 1.SORGU
+
+SELECT DISTINCT film.replacement_cost FROM film;
+
+## 2.SORGU
+
+SELECT COUNT(DISTINCT film.replacement_cost) FROM film;
+
+## 3.SORGU
+
+SELECT COUNT(*) FROM film
+WHERE film.title ILIKE 'T%' AND film.rating = 'G';
+
+## 4.SORGU
+
+SELECT COUNT(*) FROM country
+WHERE country.country LIKE '_____';
+
+## 5.SORGU
+
+SELECT COUNT(*) FROM city
+WHERE city.city ILIKE '%r';
+
+
+

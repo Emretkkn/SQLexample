@@ -39,3 +39,25 @@ WHERE actor.first_name IN ('Penelope','Nick','Ed');
 
 SELECT * FROM film
 WHERE film.rental_rate IN (0.99,2.99,4.99) AND film.replacement_cost IN (12.99,15.99,28.99);
+
+---------------------------------------------------------------------------------------
+# ÖDEV 3 
+## 1.SORGU
+
+SELECT country.country FROM country
+WHERE country.country LIKE 'A%a';
+
+## 2.SORGU
+
+SELECT country.country FROM country
+WHERE country.country LIKE '_____a';
+
+## 3.SORGU
+
+SELECT film.title FROM film
+WHERE film.title ILIKE '%T%T%T%T';
+
+## 4.SORGU
+
+SELECT film.title FROM film
+WHERE film.title ILIKE '%c' AND film.length > 90 AND film.rental_rate = 2.99;

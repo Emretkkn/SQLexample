@@ -61,7 +61,3 @@ WHERE film.title ILIKE '%T%T%T%T';
 
 SELECT film.title FROM film
 WHERE film.title ILIKE '%c' AND film.length > 90 AND film.rental_rate = 2.99;
-
-
-
-

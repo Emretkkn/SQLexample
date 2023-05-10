@@ -88,4 +88,27 @@ SELECT COUNT(*) FROM city
 WHERE city.city ILIKE '%r';
 
 
+--------------------------------------------------------------------------------------------------------
+# ÖDEV 5
+## 1.SORGU
+
+SELECT * FROM film
+WHERE film.title ILIKE '%n'
+ORDER BY film.length DESC
+LIMIT 5;
+
+## 2.SORGU
+
+SELECT * FROM film
+WHERE film.title ILIKE '%n'
+ORDER BY film.length ASC
+OFFSET 5
+LIMIT 5;
+
+## 3.SORGU
+
+SELECT * FROM customer
+WHERE customer.store_id = 1
+ORDER BY customer.last_name DESC
+LIMIT 4;
 

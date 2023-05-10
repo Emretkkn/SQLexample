@@ -137,3 +137,29 @@ LIMIT 1;
 SELECT COUNT(DISTINCT film.replacement_cost) AS sayi FROM film
 WHERE film.length > 150
 
+--------------------------------------------------------------------------------------------------------
+# ÖDEV 7
+## 1.SORGU
+
+SELECT film.rental_rate, COUNT(film.film_id) AS sayi FROM film
+GROUP BY film.rental_rate;
+
+## 2.SORGU
+
+SELECT film.replacement_cost, COUNT(film.film_id) AS film_sayisi FROM film
+GROUP BY film.replacement_cost
+HAVING COUNT(film.film_id) > 50
+
+## 3.SORGU
+
+SELECT customer.store_id, COUNT(customer.customer_id) AS musterisayisi
+FROM customer
+GROUP BY customer.store_id
+
+## 4.SORGU
+
+SELECT *
+FROM(SELECT city.country_id AS sehirid, COUNT(city.country_id) AS sehirsayisi
+FROM city
+GROUP BY city.country_id ORDER BY sehirsayisi DESC LIMIT 1) AS tablo
+

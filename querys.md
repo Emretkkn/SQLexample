@@ -112,3 +112,28 @@ WHERE customer.store_id = 1
 ORDER BY customer.last_name DESC
 LIMIT 4;
 
+
+--------------------------------------------------------------------------------------------------------
+# ÖDEV 6
+## 1.SORGU
+
+SELECT ROUND(AVG(film.rental_rate),2) AS ortalama 
+FROM film;
+
+## 2.SORGU
+
+SELECT COUNT(film.title) AS firstcharachterisC FROM film
+WHERE film.title ILIKE 'c%';
+
+## 3.SORGU
+
+SELECT film.length FROM film
+WHERE film.rental_rate = 0.99
+ORDER BY film.rental_rate DESC
+LIMIT 1;
+
+## 4.SORGU
+
+SELECT COUNT(DISTINCT film.replacement_cost) AS sayi FROM film
+WHERE film.length > 150
+

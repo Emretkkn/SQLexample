@@ -325,3 +325,38 @@ FROM payment RIGHT JOIN customer ON customer.customer_id=payment.customer_id
 SELECT concat(customer.first_name,' ',customer.last_name) AS "Full Name", rental.rental_id
 FROM customer FULL OUTER JOIN rental ON customer.customer_id=rental.customer_id;
 ```
+
+--------------------------------------------------------------------------------------------------------
+# 11.ÖDEV
+## 1.İŞLEM
+```sql
+(SELECT actor.first_name FROM actor)
+UNION
+(SELECT customer.first_name FROM customer);
+```
+## 2.İŞLEM
+```sql
+(SELECT actor.first_name FROM actor)
+INTERSECT
+(SELECT customer.first_name FROM customer);
+```
+## 3.İŞLEM
+```sql
+(SELECT actor.first_name FROM actor)
+EXCEPT
+(SELECT customer.first_name FROM customer);
+```
+## 4.İŞLEM
+```sql
+(SELECT actor.first_name FROM actor)
+UNION ALL
+(SELECT customer.first_name FROM customer);
+
+(SELECT actor.first_name FROM actor)
+INTERSECT ALL
+(SELECT customer.first_name FROM customer);
+
+(SELECT actor.first_name FROM actor)
+EXCEPT ALL
+(SELECT customer.first_name FROM customer);
+```

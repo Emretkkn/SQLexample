@@ -289,3 +289,21 @@ DELETE FROM employee WHERE length(employee.name) < 5
 DELETE FROM employee WHERE EXTRACT(YEAR FROM now()) < 2024
 DELETE FROM employee WHERE email ILIKE '%A%A%'
 ```
+
+--------------------------------------------------------------------------------------------------------
+# 8.ÖDEV
+## 1.İŞLEM
+```sql
+SELECT city.city, country.country
+FROM city INNER JOIN country ON city.country_id=country.country_id;
+```
+## 2.İŞLEM
+```sql
+SELECT concat(customer.first_name,' ',customer.last_name) AS "Full Name", payment.payment_id
+FROM customer INNER JOIN payment ON customer.customer_id=payment.customer_id
+```
+## 3.İŞLEM
+```sql
+SELECT concat(customer.first_name,' ',customer.last_name) AS "Full Name", payment.payment_id
+FROM customer INNER JOIN payment ON customer.customer_id=payment.customer_id
+```

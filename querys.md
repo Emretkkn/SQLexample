@@ -291,7 +291,7 @@ DELETE FROM employee WHERE email ILIKE '%A%A%'
 ```
 
 --------------------------------------------------------------------------------------------------------
-# 8.ÖDEV
+# 9.ÖDEV
 ## 1.İŞLEM
 ```sql
 SELECT city.city, country.country
@@ -306,4 +306,22 @@ FROM customer INNER JOIN payment ON customer.customer_id=payment.customer_id
 ```sql
 SELECT concat(customer.first_name,' ',customer.last_name) AS "Full Name", payment.payment_id
 FROM customer INNER JOIN payment ON customer.customer_id=payment.customer_id
+```
+
+--------------------------------------------------------------------------------------------------------
+# 10.ÖDEV
+## 1.İŞLEM
+```sql
+SELECT country.country, city.city
+FROM country LEFT JOIN city ON country.country_id=city.country_id
+```
+## 2.İŞLEM 
+```sql
+SELECT concat(customer.first_name,' ',customer.last_name) AS "Full Name", payment.payment_id
+FROM payment RIGHT JOIN customer ON customer.customer_id=payment.customer_id
+```
+## 3.İŞLEM
+```sql
+SELECT concat(customer.first_name,' ',customer.last_name) AS "Full Name", rental.rental_id
+FROM customer FULL OUTER JOIN rental ON customer.customer_id=rental.customer_id;
 ```

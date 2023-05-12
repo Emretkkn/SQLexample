@@ -390,3 +390,44 @@ FROM customer INNER JOIN payment ON customer.customer_id = payment.customer_id
 GROUP BY payment.customer_id, Musteri
 ORDER BY COUNT(payment.customer_id) DESC;
 ```
+
+--------------------------------------------------------------------------------------------------------
+# GENEL TEKRAR
+## 1.SORGU
+```sql
+SELECT film.title, film.length, film.replacement_cost
+FROM film
+WHERE film.title ILIKE 'k%'
+ORDER BY film.length DESC, film.replacement_cost ASC
+LIMIT 4
+```
+## 2.SORGU
+```sql
+SELECT film.rating
+FROM film
+GROUP BY film.rating
+ORDER BY COUNT(film.film_id) DESC
+LIMIT 1
+```
+## 3.SORGU
+```sql
+SELECT concat(customer.first_name,' ',customer.last_name) AS Customers
+FROM payment INNER JOIN customer ON customer.customer_id = payment.customer_id
+GROUP BY Customers
+ORDER BY COUNT(payment.customer_id) DESC
+LIMIT 1
+```
+## 4.SORGU
+```sql
+SELECT category.name, COUNT(film_category.film_id) AS "Film Sayısı"
+FROM category INNER JOIN film_category ON category.category_id=film_category.category_id
+GROUP BY category.name
+ORDER BY COUNT(film_category.film_id) ASC
+```
+## 5.SORGU
+```sql
+SELECT COUNT(*) AS "İsminde en az 4 tane 'E' bulunan film sayısı"
+FROM(SELECT film.title
+	 FROM film
+	 WHERE film.title ILIKE '%e%e%e%e%') AS t1;
+```

@@ -360,3 +360,33 @@ INTERSECT ALL
 EXCEPT ALL
 (SELECT customer.first_name FROM customer);
 ```
+
+--------------------------------------------------------------------------------------------------------
+# 12.ÖDEV
+## 1. SORGU
+```sql
+SELECT COUNT(*) AS "Ortlama Film Uzunluğundan Büyük Filmlerin Uzunluğu"
+FROM(SELECT film.length 
+	 FROM film 
+	 WHERE film.length > (SELECT AVG(film.length) FROM film)) AS tablo;
+```
+## 2.SORGU
+```sql
+SELECT COUNT(*) AS "En yüksek rental rate değerine eşit olan film sayısı"
+FROM(SELECT film.rental_rate FROM film WHERE film.rental_rate = 
+(SELECT MAX(film.rental_rate) FROM film) ) AS tablo;
+```
+## 3.SORGU
+```sql
+SELECT *
+FROM(SELECT * FROM film WHERE film.rental_rate = 
+(SELECT MIN(film.rental_rate) FROM film) AND film.replacement_cost = 
+(SELECT MIN(film.replacement_cost) FROM film)) AS tablo1;
+```
+## 4.SORGU
+```sql
+SELECT concat(customer.first_name,' ',customer.last_name) AS Musteri, COUNT(payment.customer_id) AS "Toplam Ödeme Sayısı"
+FROM customer INNER JOIN payment ON customer.customer_id = payment.customer_id
+GROUP BY payment.customer_id, Musteri
+ORDER BY COUNT(payment.customer_id) DESC;
+```
